@@ -1,0 +1,46 @@
+{
+  "name": "array-compressor",
+  "version": "0.1.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "tsc",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kik4/array-compressor.git"
+  },
+  "author": "kik4",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kik4/array-compressor/issues"
+  },
+  "homepage": "https://github.com/kik4/array-compressor#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^23.3.5",
+    "@types/node": "^10.12.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "tsc": "^1.20150623.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.3",
+    "ts-jest": "^23.10.4"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
