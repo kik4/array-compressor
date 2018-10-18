@@ -1,5 +1,7 @@
 # array-compressor
 
+[![CircleCI](https://circleci.com/gh/kik4/array-compressor.svg?style=svg)](https://circleci.com/gh/kik4/array-compressor)
+
 returns compressed array
 
 ## Installation
