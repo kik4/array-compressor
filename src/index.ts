@@ -32,7 +32,7 @@ export const decompress = (array: Array<compressedItem>): Array<any> => {
   for (let i = 0; i < array.length; i++) {
     const temp = array[i]
     for (let j = 0; j < temp.count; j++) {
-      result.push(Object.assign(temp.value))
+      result.push(temp.value)
     }
   }
   return result
