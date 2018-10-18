@@ -14,7 +14,7 @@ yarn add array-compressor
 ### Javascript
 
 ```javascript
-var compressor = require("array-compressor/compressor")
+var compressor = require("array-compressor")
 var compressed = compressor.compress([1, 1, 1, 2, 2, 3])
 var decompressed = compressor.decompress(compressed)
 ```
