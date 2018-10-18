@@ -32,7 +32,7 @@ var decompressed = compressor.decompress(compressed)
 ### TypeScript
 
 ```typescript
-import { compress } from "array-compressor"
+import { compress, decompress } from "array-compressor"
 const compressed = compress([1, 1, 1, 2, 2, 3])
 const decompressed = decompress(compressed)
 ```
