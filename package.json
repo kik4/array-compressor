@@ -1,6 +1,6 @@
 {
   "name": "array-compressor",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -18,6 +18,10 @@
     "url": "https://github.com/kik4/array-compressor/issues"
   },
   "homepage": "https://github.com/kik4/array-compressor#readme",
+  "keywords": [
+    "array",
+    "compress"
+  ],
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^23.3.5",
