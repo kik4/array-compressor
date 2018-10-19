@@ -1,14 +1,14 @@
-export type compressedItem = {
-  value: any
+export type compressedItem<T = any> = {
+  value: T
   count: number
 }
 
-export const compress = (array: Array<any>): Array<compressedItem> => {
+export const compress = <T = any>(array: Array<T>): Array<compressedItem<T>> => {
   if (!array || !array.length) {
     throw new Error("compress expects the first arg to be array.")
   }
 
-  const result: Array<compressedItem> = []
+  const result: Array<compressedItem<T>> = []
   result.push({ value: array[0], count: 1 })
 
   for (let i = 1; i < array.length; i++) {
@@ -22,12 +22,12 @@ export const compress = (array: Array<any>): Array<compressedItem> => {
   return result
 }
 
-export const decompress = (array: Array<compressedItem>): Array<any> => {
+export const decompress = <T = any>(array: Array<compressedItem<T>>): Array<T> => {
   if (!array || !array.length) {
     throw new Error("decompress expects the first arg to be array.")
   }
 
-  const result: Array<any> = []
+  const result: Array<T> = []
 
   for (let i = 0; i < array.length; i++) {
     const temp = array[i]
