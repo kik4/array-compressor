@@ -53,3 +53,17 @@ describe("decompress", () => {
     expect(result[0] === result[1]).toBeTruthy()
   })
 })
+
+describe("generics", () => {
+  it("generics usage", () => {
+    const original: number[] = [1, 1, 1, 2, 2, 3, 4, 4, 4, 4]
+    const compressed: compressedItem<number>[] = [
+      { value: 1, count: 3 },
+      { value: 2, count: 2 },
+      { value: 3, count: 1 },
+      { value: 4, count: 4 },
+    ]
+    expect(compress(original)).toEqual(compressed)
+    expect(decompress(compressed)).toEqual(original)
+  })
+})
