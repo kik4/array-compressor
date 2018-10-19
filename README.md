@@ -57,8 +57,8 @@ const decompressed = decompress(compressed)
 ```typescript
 import { compress, decompress } from "array-compressor"
 const array: number[] = [1, 1, 1, 2, 2, 3] // typed
-const compressed = compress(array) // typed
-const decompressed = decompress(compressed) // typed
+const compressed = compress<number>(array) // typed
+const decompressed = decompress<number>(compressed) // typed
 ```
 
 ## Test
