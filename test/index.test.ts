@@ -1,15 +1,16 @@
 import { compress, compressedItem, decompress } from "../src"
 
+const original = [1, 1, 1, 2, 2, 3, 4, 4, 4, 4]
+const compressed: compressedItem[] = [
+  { value: 1, count: 3 },
+  { value: 2, count: 2 },
+  { value: 3, count: 1 },
+  { value: 4, count: 4 },
+]
+
 describe("compress", () => {
   it("compress(array) to equal expected", () => {
-    const array = [1, 1, 1, 2, 2, 3, 4, 4, 4, 4]
-    const expected: compressedItem[] = [
-      { value: 1, count: 3 },
-      { value: 2, count: 2 },
-      { value: 3, count: 1 },
-      { value: 4, count: 4 },
-    ]
-    expect(compress(array)).toEqual(expected)
+    expect(compress(original)).toEqual(compressed)
   })
 
   it("compress(null) to throw error", () => {
@@ -27,14 +28,7 @@ describe("compress", () => {
 
 describe("decompress", () => {
   it("decompress(array) to equal expected", () => {
-    const expected: compressedItem[] = [
-      { value: 1, count: 3 },
-      { value: 2, count: 2 },
-      { value: 3, count: 1 },
-      { value: 4, count: 4 },
-    ]
-    const array = [1, 1, 1, 2, 2, 3, 4, 4, 4, 4]
-    expect(decompress(expected)).toEqual(array)
+    expect(decompress(compressed)).toEqual(original)
   })
 
   it("decompress(null) to throw error", () => {
@@ -56,13 +50,6 @@ describe("decompress", () => {
 
 describe("generics", () => {
   it("generics usage", () => {
-    const original: number[] = [1, 1, 1, 2, 2, 3, 4, 4, 4, 4]
-    const compressed: compressedItem<number>[] = [
-      { value: 1, count: 3 },
-      { value: 2, count: 2 },
-      { value: 3, count: 1 },
-      { value: 4, count: 4 },
-    ]
     expect(compress(original)).toEqual(compressed)
     expect(decompress(compressed)).toEqual(original)
   })
