@@ -1,4 +1,4 @@
-import { compress, compressedItem, decompress, compareFunction } from "../src"
+import { compress, compressedItem, decompress, compareFunction, copyFunction } from "../src"
 
 const original = [1, 1, 1, 2, 2, 3, 4, 4, 4, 4]
 const compressed: compressedItem[] = [
@@ -12,6 +12,7 @@ type testObj = { name: string }
 const originalObj: testObj[] = [{ name: "A" }, { name: "A" }, { name: "B" }]
 const compressedObj: compressedItem[] = [{ value: { name: "A" }, count: 2 }, { value: { name: "B" }, count: 1 }]
 const compareObj: compareFunction<testObj> = (src, dst) => src.name === dst.name
+const copyObj: copyFunction<testObj> = src => Object.assign({}, src)
 
 describe("compress", () => {
   it("compress(array) to equal expected", () => {
@@ -38,6 +39,14 @@ describe("compress", () => {
 describe("decompress", () => {
   it("decompress(array) to equal expected", () => {
     expect(decompress(compressed)).toEqual(original)
+  })
+
+  it("decompress(array, func) to equal expected", () => {
+    const result = decompress(compressedObj, copyObj)
+    expect(result).toEqual(originalObj)
+
+    // different object
+    expect(result[0] === result[1]).toBeFalsy()
   })
 
   it("decompress(null) to throw error", () => {

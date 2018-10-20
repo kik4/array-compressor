@@ -28,9 +28,15 @@ export const compress = <T = any>(array: Array<T>, compare?: compareFunction<T>)
   return result
 }
 
-export const decompress = <T = any>(array: Array<compressedItem<T>>): Array<T> => {
+export type copyFunction<T = any> = (src: T) => T
+
+export const decompress = <T = any>(array: Array<compressedItem<T>>, copy?: copyFunction<T>): Array<T> => {
   if (!array || !array.length) {
     throw new Error("decompress expects the first arg to be array.")
+  }
+
+  if (!copy) {
+    copy = (src: T) => src
   }
 
   const result: Array<T> = []
@@ -38,7 +44,7 @@ export const decompress = <T = any>(array: Array<compressedItem<T>>): Array<T> =
   for (let i = 0; i < array.length; i++) {
     const temp = array[i]
     for (let j = 0; j < temp.count; j++) {
-      result.push(temp.value)
+      result.push(copy(temp.value))
     }
   }
   return result
