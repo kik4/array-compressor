@@ -3,9 +3,15 @@ export type compressedItem<T = any> = {
   count: number
 }
 
-export const compress = <T = any>(array: Array<T>): Array<compressedItem<T>> => {
+export type compareFunction<T = any> = (src: T, dst: T) => boolean
+
+export const compress = <T = any>(array: Array<T>, compare?: compareFunction<T>): Array<compressedItem<T>> => {
   if (!array || !array.length) {
     throw new Error("compress expects the first arg to be array.")
+  }
+
+  if (!compare) {
+    compare = (src: T, dst: T) => src === dst
   }
 
   const result: Array<compressedItem<T>> = []
@@ -13,7 +19,7 @@ export const compress = <T = any>(array: Array<T>): Array<compressedItem<T>> => 
 
   for (let i = 1; i < array.length; i++) {
     const prev = result[result.length - 1]
-    if (prev.value === array[i]) {
+    if (compare(prev.value, array[i])) {
       prev.count++
     } else {
       result.push({ value: array[i], count: 1 })
