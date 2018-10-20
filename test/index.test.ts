@@ -61,6 +61,7 @@ describe("decompress", () => {
     const result = decompress(expected)
     expect(result).toEqual(array)
 
+    // same object
     result[0].name = "C"
     expect(result[0] === result[1]).toBeTruthy()
   })
