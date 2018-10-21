@@ -1,9 +1,9 @@
 # array-compressor
 
-<a href="https://circleci.com/gh/kik4/array-compressor"><img src="https://img.shields.io/circleci/project/github/kik4/array-compressor.svg" alt="Build Status"></a>
-<a href="https://npmcharts.com/compare/array-compressor?minimal=true"><img src="https://img.shields.io/npm/dt/array-compressor.svg" alt="Downloads"></a>
-<a href="https://www.npmjs.com/package/array-compressor"><img src="https://img.shields.io/npm/v/array-compressor.svg" alt="Version"></a>
-<a href="https://www.npmjs.com/package/array-compressor"><img src="https://img.shields.io/npm/l/array-compressor.svg" alt="License"></a>
+[![Build Status](https://img.shields.io/circleci/project/github/kik4/array-compressor.svg)](https://circleci.com/gh/kik4/array-compressor)
+[![Downloads](https://img.shields.io/npm/dt/array-compressor.svg)](https://npmcharts.com/compare/array-compressor?minimal=true)
+[![Version](https://img.shields.io/npm/v/array-compressor.svg)](https://www.npmjs.com/package/array-compressor)
+[![License](https://img.shields.io/npm/l/array-compressor.svg)](https://www.npmjs.com/package/array-compressor)
 
 Compress and decompress arrays.
 
