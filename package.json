@@ -1,7 +1,7 @@
 {
   "name": "array-compressor",
   "version": "1.0.1",
-  "description": "",
+  "description": "Compress and decompress arrays",
   "main": "dist/index.js",
   "scripts": {
     "prepare": "tsc",
