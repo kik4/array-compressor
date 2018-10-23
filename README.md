@@ -99,7 +99,7 @@ result1[0] === result1[1] // true
 result2[0] === result2[1] // false
 ```
 
-Default copy function is `(src) => src`.
+Default copy function is `src => src`.
 
 ## Test
 
