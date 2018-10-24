@@ -69,7 +69,7 @@ describe("decompress", () => {
 
 describe("generics", () => {
   it("generics usage", () => {
-    expect(compress(original)).toEqual(compressed)
-    expect(decompress(compressed)).toEqual(original)
+    expect(compress<number>(original)).toEqual(compressed)
+    expect(decompress<number>(compressed)).toEqual(original)
   })
 })
