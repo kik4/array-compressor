@@ -1,6 +1,6 @@
 {
   "name": "array-compressor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Compress and decompress arrays",
   "main": "dist/index.js",
   "scripts": {
